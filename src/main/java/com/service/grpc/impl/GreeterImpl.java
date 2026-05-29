@@ -1,6 +1,6 @@
 package com.service.grpc.impl;
 
-import com.service.grpc.*;
+import com.service.grpc.hello.*;
 import io.grpc.stub.StreamObserver;
 
 public class GreeterImpl extends GreeterGrpc.GreeterImplBase {

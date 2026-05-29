@@ -16,7 +16,7 @@ package com.service.grpc.client;
  * limitations under the License.
  */
 
-import com.service.grpc.*;
+import com.service.grpc.hello.*;
 import com.service.grpc.server.HelloWorldServer;
 import io.grpc.Channel;
 import io.grpc.Grpc;
