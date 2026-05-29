@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.service.grpc.eqd";
+option java_outer_classname = "EqdRPCAppProto";
+option objc_class_prefix = "EQD";
+
+package eqd;
+
+// The greeting service definition.
+service ServiceApp {
+  // Endpoint 1: Get Health end point
+  rpc GetHealth (HealthRequest) returns (HealthReply);
+
+  // Endpoint 2: GetService1 : Server-Streaming RPC - Stream transaction history records efficiently
+  rpc GetService1 (Service1Request) returns (stream Service1Reply);
+}
+
+// The request message containing the input as name
+message HealthRequest {
+  string name = 1;
+}
+
+// The response message containing the response message
+message HealthReply {
+  string message = 1;
+}
+
+//-- Datastructure for second end point - Service1
+message Service1Request {
+  string name = 1;
+  int32 number = 2;
+}
+
+// The response message containing the response message with 2 lines
+message Service1Reply {
+  string message = 1;
+  string line1 = 2;
+  string line2 = 3;
+}
